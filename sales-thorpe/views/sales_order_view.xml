@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Define the view for the sale.order model -->
+        <record id="view_sale_order_tree_inherit" model="ir.ui.view">
+            <field name="name">sale.order.tree.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="arch" type="xml">
+                <tree>
+                    <!-- Add columns to display sales order lines -->
+                    <field name="order_line" widget="one2many_list">
+                        <tree>
+                            <field name="product_id"/>
+                            <field name="product_uom_qty"/>
+                            <field name="price_unit"/>
+                            <field name="price_total"/>
+                        </tree>
+                    </field>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Update the existing action to use the new view -->
+        <record id="action_sale_order_tree" model="ir.actions.act_window">
+            <field name="name">Sales Orders</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_sale_order_tree_inherit"/>
+        </record>
+    </data>
+</odoo>
