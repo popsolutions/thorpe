@@ -17,9 +17,8 @@
 	'views/menu.xml',
     ],
     'demo': [
-        # Aqui você pode adicionar dados de demonstração, se necessário
     ],
-    'images': ['static/description/icon.png'],  # Caminho relativo para o ícone do módulo
+    'images': ['static/description/icon.png'],
     'installable': True,
     'application': True,
     'auto_install': False,

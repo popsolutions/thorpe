@@ -18,14 +18,23 @@
 
     <!-- Optional: Definition of the parent menu, if necessary -->
     <menuitem id="menu_thorpe_base_root" name="Thorpe" sequence="10"/>
-    <menuitem id="menu_thorpe_base_products" name="Products" parent="menu_thorpe_base_root" action="action_thorpe_base" sequence="11"/>
-    <menuitem id="menu_thorpe_base_machines" name="Deployments" parent="menu_thorpe_base_root" action="action_thorpe_base" sequence="10"/>
-    <menuitem id="menu_thorpe_base_users" name="Users" parent="menu_thorpe_base_root" action="action_thorpe_base" sequence="10"/>
-    <menuitem id="menu_thorpe_base_main" name="Configuration" parent="menu_thorpe_base_root" action="action_thorpe_base" sequence="100"/>
-    	<menuitem id="menu_thorpe_base_providers" name="Thorpe Base Providers" parent="menu_thorpe_base_main" action="action_thorpe_base" sequence="120"/>
-    	<menuitem id="menu_thorpe_base_auth_users" name="Thorpe Auth Users" parent="menu_thorpe_base_main" action="action_thorpe_base" sequence="121"/>
-    	<menuitem id="menu_thorpe_base_provider_nodes" name="Thorpe Nodes" parent="menu_thorpe_base_main" action="action_thorpe_base" sequence="122"/>
-    	<menuitem id="menu_thorpe_base_deploy_type" name="Thorpe Deployments" parent="menu_thorpe_base_main" action="action_thorpe_base" sequence="123"/>
+    
+	<menuitem id="menu_thorpe_base_products" name="Products" parent="menu_thorpe_base_root" action="action_thorpe_base" sequence="20"/>
+	
+	<menuitem id="menu_thorpe_base_machines" name="Deployments" parent="menu_thorpe_base_root" action="action_thorpe_base" sequence="30"/>
+		<menuitem id="menu_thorpe_base_containers" name="Containers" parent="menu_thorpe_base_machines" action="action_thorpe_base" sequence="31"/>
+		<menuitem id="menu_thorpe_base_virtualm" name="Virtual Machines" parent="menu_thorpe_base_machines" action="action_thorpe_base" sequence="32"/>
+	
+	<menuitem id="menu_thorpe_base_users" name="Users" parent="menu_thorpe_base_root" action="action_thorpe_base" sequence="40"/>
+		<menuitem id="menu_thorpe_base_res_partens" name="Users" parent="menu_thorpe_base_users" action="action_thorpe_base" sequence="41"/>
+		<menuitem id="menu_thorpe_base_users_groups" name="Groups" parent="menu_thorpe_base_users" action="action_thorpe_base" sequence="42"/>
+		<menuitem id="menu_thorpe_base_users_privileges" name="Privileges" parent="menu_thorpe_base_users" action="action_thorpe_base" sequence="41"/>
+	
+	<menuitem id="menu_thorpe_base_main" name="Configuration" parent="menu_thorpe_base_root" action="action_thorpe_base" sequence="100"/>
+    		<menuitem id="menu_thorpe_base_providers" name="Thorpe Base Providers" parent="menu_thorpe_base_main" action="action_thorpe_base" sequence="120"/>
+    		<menuitem id="menu_thorpe_base_auth_users" name="Thorpe Auth Users" parent="menu_thorpe_base_main" action="action_thorpe_base" sequence="121"/>
+    		<menuitem id="menu_thorpe_base_provider_nodes" name="Thorpe Nodes" parent="menu_thorpe_base_main" action="action_thorpe_base" sequence="122"/>
+    		<menuitem id="menu_thorpe_base_deploy_type" name="Thorpe Deployments" parent="menu_thorpe_base_main" action="action_thorpe_base" sequence="123"/>
 
 
 
