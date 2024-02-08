@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Action definition to open the view of the model thorpe.base -->
+    <record id="action_thorpe_base" model="ir.actions.act_window">
+        <field name="name">Thorpe Base</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">thorpe.base</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create new Thorpe Base records
+            </p>
+        </field>
+    </record>
+
+    <!-- Menu item to access the defined action above -->
+    <menuitem id="menu_thorpe_base_main" name="Thorpe Base" sequence="10" action="action_thorpe_base"/>
+
+    <!-- Optional: Definition of the parent menu, if necessary -->
+    <!-- <menuitem id="menu_thorpe_base_root" name="Thorpe" sequence="1"/> -->
+    <!-- <menuitem id="menu_thorpe_base_main" name="Thorpe Base" parent="menu_thorpe_base_root" action="action_thorpe_base" sequence="10"/> -->
+</odoo>
