@@ -73,7 +73,7 @@ class SaleOrder(models.Model):
         elif method.upper() == 'PUT':
             self.show_log("Request PUT")
             self.show_log(url)
-            response = requests.put(url, headers=headers, json=body, verify=False)
+            response = requests.put(url, headers=headers, data=body, verify=False)
         elif method.upper() == 'DELETE':
             self.show_log("Request DELETE")
             self.show_log(url)

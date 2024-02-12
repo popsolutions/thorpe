@@ -9,4 +9,12 @@ class ThorpeBase(models.Model):
     _description = 'Odoo Hypervisor Orchestrator'
 
     #Model Fields
-    name = fields.Char("Name")
+    name = fields.Char(string="Name", required=True)
+    public_ip = fields.Char(string="Public Api", required=True)
+    region = fields.Char(string="Region", required=True)
+    url = fields.Char(string="Url Api", required=True)
+    token = fields.Char(string="Token Api", required=True)
+    secret = fields.Char(string="Secret Token", required=True)    
+    latitude = fields.Float(string="Latitude", required=True)
+    longitude = fields.Float(string="Longitude", required=True)
+    comments = fields.Text(string="Comments", required=False, translate=True)

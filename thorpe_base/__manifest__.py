@@ -7,18 +7,20 @@
         Descrição longa do Thorpe Base.
         Este módulo fornece uma base para funcionalidades específicas do Thorpe.
     """,
-    'author': "Seu Nome",
-    'website': "http://seuwebsite.com",
+    'author': 'Marcos Méndez & Enieber Cunha | pop.coop',
     'category': 'Applications',
     'license': 'AGPL-3',
-    'depends': ['base'],
+    'depends': ['base', 'mail'],
     'data': [
         'security/ir.model.access.csv',
-	'views/menu.xml',
+	    'views/thorpe_base.xml',
+	    'views/cron_update_list_nodes.xml',
+	    'views/thorpe_nodes.xml',
+	    'views/menu.xml',
     ],
     'demo': [
     ],
-    'images': ['static/description/icon.png'],
+    'images': ['static/img/icon.png'],
     'installable': True,
     'application': True,
     'auto_install': False,

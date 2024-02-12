@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_thorpe_base" model="ir.actions.act_window">
+        <field name="name">Thorpe Base</field>
+        <field name="res_model">thorpe.base</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="thorpe_base_provider_view" model="ir.ui.view">
+        <field name="name">thorpe.base.list.view</field>
+        <field name="model">thorpe.base</field>
+        <field name="arch" type="xml">
+        <tree>
+            <field name="name" />
+            <field name="comments" />
+        </tree>
+        </field>
+    </record> 
+    <record id="thorpe_base_provider_form_view" model="ir.ui.view">
+        <field name="name">thorpe.base.form.view</field>
+        <field name="model">thorpe.base</field>
+        <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <group>
+                    <field name="name" string="Name"/>
+                    <field name="region" string="Region"/>
+                    <field name="latitude" string="Latitude"/>
+                    <field name="longitude" string="Longitude"/>
+                    <field name="public_ip" string="Public Api"/>                    
+                    <field name="url" string="Url"/>
+                    <field name="token" string="Token" />
+                    <field name="secret" string="Secret"/>
+                    <field name="comments" string="Comment"/>
+                </group>
+            </sheet>
+        </form>
+        </field>
+    </record>
+</odoo>
