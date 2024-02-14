@@ -29,12 +29,12 @@ class ThorpeBaseUpdateNodes(models.Model):
                     if not node_record:
                         node_record = self.env['thorpe.base.node'].create({
                             'name': node_name,
-                            'pv_id': provider.id,
+                            'pve_id': provider.id,
                             'status': status
                         })
 
                     node_record.write({
-                        'pv_id': provider.id,
+                        'pve_id': provider.id,
                         'status': status,
                     })
             except Exception as e:

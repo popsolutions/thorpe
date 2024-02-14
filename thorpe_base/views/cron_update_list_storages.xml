@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding='UTF-8'?>
 <odoo>
     <data noupdate="1">
-        <record id="thorpe_base_update_nodes" model="ir.cron">
-            <field name="name">Atualizar Nodes com dados do PVE</field>
-            <field name="model_id" ref="model_thorpe_base_update_nodes"/>
+        <record id="thorpe_base_update_storage" model="ir.cron">
+            <field name="name">Atualizar Storages com dados do Node selecionado</field>
+            <field name="model_id" ref="model_thorpe_base_update_storage"/>
             <field name="state">code</field>
-            <field name="code">model.atualiza_node_com_pve()</field>
+            <field name="code">model.atualiza_storages_com_node()</field>
             <field name="user_id" ref="base.user_root"/>
             <field name='interval_number'>1</field>
             <field name='interval_type'>hours</field>

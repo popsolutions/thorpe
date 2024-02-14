@@ -15,7 +15,9 @@
         'security/ir.model.access.csv',
 	    'views/thorpe_base.xml',
 	    'views/cron_update_list_nodes.xml',
+	    'views/cron_update_list_storages.xml',
 	    'views/thorpe_nodes.xml',
+	    'views/thorpe_storages.xml',
 	    'views/menu.xml',
     ],
     'demo': [
