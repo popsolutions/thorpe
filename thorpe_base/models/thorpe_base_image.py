@@ -4,11 +4,11 @@
 from odoo import _, api, fields, models
 
 
-class ThorpeBaseNode(models.Model):
-    _name = 'thorpe.base.storage'
-    _description = 'Storage of node selected'
-    
+class ThorpeBaseImage(models.Model):
+    _name = 'thorpe.base.image'
+    _description = 'Images from nodes'
+ 
     name = fields.Char(string="Name", required=True)
     node_id = fields.Many2one("thorpe.base.node", string="node", required=True)
-    selected_to_images = fields.Boolean(string="Select to Images", default=False, required=True)
-    used_fraction = fields.Char(string="Fractuion Used", required=True)
+    storage_id = fields.Many2one("thorpe.base.node.storage", string="storage", required=True)
+    content = fields.Char(string="Content", required=True)

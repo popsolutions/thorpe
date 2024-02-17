@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_thorpe_base_images" model="ir.actions.act_window">
+        <field name="name">Thorpe Images to salles</field>
+        <field name="res_model">thorpe.base.image</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="thorpe_base_images_view" model="ir.ui.view">
+        <field name="name">thorpe.base.image.list.view</field>
+        <field name="model">thorpe.base.image</field>
+        <field name="arch" type="xml">
+        <tree>
+            <field name="name" />
+        </tree>
+        </field>
+    </record>     
+</odoo>

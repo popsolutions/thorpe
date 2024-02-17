@@ -2,14 +2,14 @@
 <odoo>
     <record id="action_thorpe_base" model="ir.actions.act_window">
         <field name="name">Thorpe Base</field>
-        <field name="res_model">thorpe.base</field>
+        <field name="res_model">thorpe.base.cluster</field>
         <field name="type">ir.actions.act_window</field>
         <field name="view_mode">tree,form</field>
     </record>
 
     <record id="thorpe_base_provider_view" model="ir.ui.view">
-        <field name="name">thorpe.base.list.view</field>
-        <field name="model">thorpe.base</field>
+        <field name="name">thorpe.base.cluster.list.view</field>
+        <field name="model">thorpe.base.cluster</field>
         <field name="arch" type="xml">
         <tree>
             <field name="name" />
@@ -18,8 +18,8 @@
         </field>
     </record> 
     <record id="thorpe_base_provider_form_view" model="ir.ui.view">
-        <field name="name">thorpe.base.form.view</field>
-        <field name="model">thorpe.base</field>
+        <field name="name">thorpe.base.cluster.form.view</field>
+        <field name="model">thorpe.base.cluster</field>
         <field name="arch" type="xml">
         <form>
             <sheet>

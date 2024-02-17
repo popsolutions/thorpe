@@ -5,15 +5,15 @@ from . import thorpe_request
 
 _logger = logging.getLogger(__name__)                                                                                        
 
-class ThorpeBaseUpdateNodes(models.Model):
-    _name = 'thorpe.base.update.nodes'
+class ThorpeBaseUpdateNode(models.Model):
+    _name = 'thorpe.base.update.node'
 
     @api.model
     def atualiza_node_com_pve(self):
         # Consulta para obter todos os Nodes
         _logger.info("-----------------------------------------------------")
         _logger.info("atualiza_node_com_pve")
-        providers = self.env['thorpe.base'].search([])
+        providers = self.env['thorpe.base.cluster'].search([])
         for provider in providers:
             try:
                 request = thorpe_request.ThorpeRequest()
@@ -23,8 +23,7 @@ class ThorpeBaseUpdateNodes(models.Model):
                 for item in node_list:
                     node_name = item.get('node')
                     status = item.get('status')
-
-                    node_record = self.env['thorpe.base.node'].search([('name', '=', node_name)], limit=1)
+                    node_record = self.env['thorpe.base.node'].search([('name', '=', node_name), ('pve_id', '=', provider.id)], limit=1)
 
                     if not node_record:
                         node_record = self.env['thorpe.base.node'].create({
@@ -34,7 +33,6 @@ class ThorpeBaseUpdateNodes(models.Model):
                         })
 
                     node_record.write({
-                        'pve_id': provider.id,
                         'status': status,
                     })
             except Exception as e:

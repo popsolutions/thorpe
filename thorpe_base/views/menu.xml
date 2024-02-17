@@ -21,7 +21,7 @@
 		<menuitem id="menu_thorpe_base_users_privileges" name="Privileges" parent="menu_thorpe_base_users"  sequence="41"/>
 	
 	<menuitem id="menu_thorpe_base_main" name="Configuration" parent="menu_thorpe_base_root" sequence="100"/>
-        <menuitem id="menu_thorpe_base_images" name="Images" parent="menu_thorpe_base_main" sequence="120"/>
+        <menuitem id="menu_thorpe_base_images" name="Images" parent="menu_thorpe_base_main" action="action_thorpe_base_images" sequence="120"/>
         <menuitem id="menu_thorpe_base_auth_users" name="Auth Users" parent="menu_thorpe_base_main"  sequence="121"/>
         <menuitem id="menu_thorpe_base_nodes" name="Nodes" parent="menu_thorpe_base_main" action="action_thorpe_base_nodes" sequence="122"/>
         <menuitem id="menu_thorpe_base_storages" name="Storages" parent="menu_thorpe_base_main" action="action_thorpe_base_storage" sequence="123"/>

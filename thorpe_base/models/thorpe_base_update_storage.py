@@ -5,7 +5,7 @@ from . import thorpe_request
 
 _logger = logging.getLogger(__name__)                                                                                        
 
-class ThorpeBaseUpdateNodes(models.Model):
+class ThorpeBaseUpdateStorage(models.Model):
     _name = 'thorpe.base.update.storage'
 
     @api.model
@@ -14,7 +14,7 @@ class ThorpeBaseUpdateNodes(models.Model):
         _logger.info("-----------------------------------------------------")
         _logger.info("atualiza_storages_com_node")
         nodes = self.env['thorpe.base.node'].search([('selected_to_sales', '=', True)])
-        providers = self.env['thorpe.base'].search([])
+        providers = self.env['thorpe.base.cluster'].search([])
         provider = providers[0]
         for node in nodes:
             try:                
@@ -22,24 +22,22 @@ class ThorpeBaseUpdateNodes(models.Model):
                 url = f"/nodes/{node.name}/storage"
 
                 response = request.make_request(provider, url, 'GET', None)
-                _logger.info(f"response: {response.text}")
                 data = response.json()
                 storage_list = data.get('data')
                 for item in storage_list:
-                    storage = item.get('storage')
+                    name = item.get('storage')
                     used_fraction = item.get('used_fraction')
 
-                    storage_record = self.env['thorpe.base.node.storage'].search([('name', '=', storage)], limit=1)
+                    storage_record = self.env['thorpe.base.storage'].search([('name', '=', name), ('node_id', '=', node.id)], limit=1)
 
                     if not storage_record:
-                        storage_record = self.env['thorpe.base.node.storage'].create({
-                            'name': storage,
+                        storage_record = self.env['thorpe.base.storage'].create({
+                            'name': name,
                             'node_id': node.id,
                             'used_fraction': used_fraction
                         })
 
                     storage_record.write({
-                        'node_id': node.id,
                         'used_fraction': used_fraction,
                     })
             except Exception as e:

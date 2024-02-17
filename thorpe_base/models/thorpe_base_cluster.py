@@ -5,10 +5,9 @@ from odoo import _, api, fields, models
 
 
 class ThorpeBase(models.Model):
-    _name = 'thorpe.base'
+    _name = 'thorpe.base.cluster'
     _description = 'Odoo Hypervisor Orchestrator'
 
-    #Model Fields
     name = fields.Char(string="Name", required=True)
     public_ip = fields.Char(string="Public Api", required=True)
     region = fields.Char(string="Region", required=True)

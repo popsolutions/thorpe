@@ -13,11 +13,13 @@
     'depends': ['base', 'mail'],
     'data': [
         'security/ir.model.access.csv',
-	    'views/thorpe_base.xml',
-	    'views/cron_update_list_nodes.xml',
-	    'views/cron_update_list_storages.xml',
-	    'views/thorpe_nodes.xml',
-	    'views/thorpe_storages.xml',
+	    'views/thorpe_cluster.xml',
+	    'views/cron_update_list_node.xml',
+	    'views/cron_update_list_storage.xml',
+	    'views/cron_update_list_image.xml',
+	    'views/thorpe_node.xml',
+	    'views/thorpe_storage.xml',
+	    'views/thorpe_image.xml',
 	    'views/menu.xml',
     ],
     'demo': [
