@@ -4,10 +4,9 @@
 
 <odoo>
 
-    <record model="ir.model.access" id="thorpe_base_access_name"> <!-- TODO acl id -->
-        <field name="name">thorpe.base access name</field> <!-- TODO acl name -->
-        <field name="model_id" ref="model_thorpe_base"/>
-        <!-- TODO review and adapt -->
+    <record model="ir.model.access" id="thorpe_base_access_name">
+        <field name="name">thorpe.base access name</field> 
+        <field name="model_id" ref="model_thorpe_base_cluster"/>
         <field name="group_id" ref="base.group_user"/>
         <field name="perm_read" eval="1"/>
         <field name="perm_create" eval="0"/>

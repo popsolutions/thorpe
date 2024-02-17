@@ -1,3 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_thorpe_base_user,thorpe.base.model_access_user,model_thorpe_base,base.group_user,1,0,0,0
+access_thorpe_base_cluster,Access Thorpe Base Cluster,model_thorpe_base_cluster,base.group_user,1,1,1,0
+access_thorpe_base_image,Access Thorpe Base Images,model_thorpe_base_image,base.group_user,1,1,0,0
+access_thorpe_base_node,Access Thorpe Base Node,model_thorpe_base_node,base.group_user,1,1,0,0
+access_thorpe_base_storage,Access Thorpe Base Storage,model_thorpe_base_storage,base.group_user,1,1,0,0
 
