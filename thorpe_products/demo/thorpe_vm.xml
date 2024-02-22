@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="product_vm" model="product.category">
+            <field name="name">Produtos VMs</field>
+        </record>
+
+        <record id="product_template_vm_standart" model="product.template">
+            <field name="name">Standard VM</field>
+            <field name="type">product</field>
+            <field name="categ_id" ref="product_vm"/>
+            <field name="list_price">200.00</field>
+            <field name="standard_price">180.00</field>
+        </record>
+
+        <!-- Definindo as variantes de atributos para vCPU, vRAM e armazenamento SSD -->
+        <record id="attribute_vcpu" model="product.attribute">
+            <field name="name">vCPU</field>
+            <field name="create_variant">always</field>
+        </record>
+        <record id="attribute_vram" model="product.attribute">
+            <field name="name">vRAM</field>
+            <field name="create_variant">always</field>
+        </record>
+        <record id="attribute_ssd" model="product.attribute">
+            <field name="name">SSD</field>
+            <field name="create_variant">always</field>
+        </record>
+
+        <!-- Definindo os valores dos atributos -->
+        <record id="value_vcpu_1" model="product.attribute.value">
+            <field name="attribute_id" ref="attribute_vcpu"/>
+            <field name="name">1</field>
+            <field name="sequence">1</field>
+        </record>
+        <record id="value_vram_1gb" model="product.attribute.value">
+            <field name="attribute_id" ref="attribute_vram"/>
+            <field name="name">1 GB</field>
+            <field name="sequence">1</field>
+        </record>
+        <record id="value_ssd_160gb" model="product.attribute.value">
+            <field name="attribute_id" ref="attribute_ssd"/>
+            <field name="name">160 GB</field>
+            <field name="sequence">1</field>
+        </record>
+
+        <!-- Associando as variantes de atributos ao template de produto -->
+        <record id="product_template_attribute_vcpu" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="product_template_vm_standart"/>
+            <field name="attribute_id" ref="attribute_vcpu"/>
+            <field name="value_ids" eval="[(6, 0, [ref('value_vcpu_1')])]"/>
+        </record>
+
+        <record id="product_template_attribute_vram" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="product_template_vm_standart"/>
+            <field name="attribute_id" ref="attribute_vram"/>
+            <field name="value_ids" eval="[(6, 0, [ref('value_vram_1gb')])]"/>
+        </record>
+        
+        <record id="product_template_attribute_ssd" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="product_template_vm_standart"/>
+            <field name="attribute_id" ref="attribute_ssd"/>
+            <field name="value_ids" eval="[(6, 0, [ref('value_ssd_160gb')])]"/>
+        </record>
+
+    </data>
+</odoo>
