@@ -9,6 +9,7 @@
     'data': [
         'views/sales_order_view.xml',
     ],
+    'images': ['static/img/icon.png'],
     'installable': True,
     'application': False,
     'auto_install': False,
