@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_thorpe_base_storage" model="ir.actions.act_window">
+        <field name="name">Thorpe Storages</field>
+        <field name="res_model">thorpe.base.node.storage</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="thorpe_base_nodes_view" model="ir.ui.view">
+        <field name="name">thorpe.base.node.storage.list.view</field>
+        <field name="model">thorpe.base.node.storage</field>
+        <field name="arch" type="xml">
+        <tree>
+            <field name="name" />
+            <field name="selected_to_images" />
+            <field name="used_fraction" />
+        </tree>
+        </field>
+    </record>     
+</odoo>

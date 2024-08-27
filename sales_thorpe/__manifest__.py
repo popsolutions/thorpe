@@ -5,7 +5,7 @@
     'description': 'Custom module to trigger actions on sales order confirmation and automate PVE deploy integration.',
     'category': 'Sales',
     'author': 'Marcos Méndez & Enieber Cunha | pop.coop',
-    'depends': ['sale, sale_management'],
+    'depends': ['sale'],
     'data': [
         'views/sales_order_view.xml',
     ],

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem
+        id="menu_thorpe_base_main"
+        name="Thorpe"
+        sequence="10"
+        action="action_thorpe_base"
+        web_icon="thorpe_base,static/description/icon.png"
+    />
+
+    <menuitem id="menu_thorpe_base_root" name="Thorpe" sequence="10" web_icon="thorpe_base,static/description/icon.png" />
+    	<menuitem id="menu_thorpe_base_products" name="Products" parent="menu_thorpe_base_root" sequence="20"/>
+	
+	<menuitem id="menu_thorpe_base_machines" name="Deployments" parent="menu_thorpe_base_root" sequence="30"/>
+		<menuitem id="menu_thorpe_base_containers" name="Containers" parent="menu_thorpe_base_machines"  sequence="31"/>
+		<menuitem id="menu_thorpe_base_virtualm" name="Virtual Machines" parent="menu_thorpe_base_machines"  sequence="32"/>
+	
+	<menuitem id="menu_thorpe_base_users" name="Users" parent="menu_thorpe_base_root" sequence="40"/>
+		<menuitem id="menu_thorpe_base_res_partens" name="Users" parent="menu_thorpe_base_users"  sequence="41"/>
+		<menuitem id="menu_thorpe_base_users_groups" name="Groups" parent="menu_thorpe_base_users"  sequence="42"/>
+		<menuitem id="menu_thorpe_base_users_privileges" name="Privileges" parent="menu_thorpe_base_users"  sequence="41"/>
+	
+	<menuitem id="menu_thorpe_base_main" name="Configuration" parent="menu_thorpe_base_root" sequence="100"/>
+        <menuitem id="menu_thorpe_base_images" name="Images" parent="menu_thorpe_base_main" sequence="120"/>
+        <menuitem id="menu_thorpe_base_auth_users" name="Auth Users" parent="menu_thorpe_base_main"  sequence="121"/>
+        <menuitem id="menu_thorpe_base_nodes" name="Nodes" parent="menu_thorpe_base_main" action="action_thorpe_base_nodes" sequence="122"/>
+        <menuitem id="menu_thorpe_base_storages" name="Storages" parent="menu_thorpe_base_main" action="action_thorpe_base_storage" sequence="123"/>
+        <menuitem id="menu_thorpe_base_deploy_type" name="Deployments" parent="menu_thorpe_base_main"  sequence="124"/>
+</odoo>
