@@ -5,14 +5,15 @@ from . import thorpe_request
 
 _logger = logging.getLogger(__name__)                                                                                        
 
-class ThorpeBaseUpdateNodes(models.Model):
-    _name = 'thorpe.base.update.nodes'
+class UpdateNodes(models.Model):
+    _name = 'thorpe.update.nodes'
+    _description = 'methods to update nodes values'
 
     @api.model
-    def atualiza_node_com_pve(self):
-        # Consulta para obter todos os Nodes
+    def update_nodes(self):
         _logger.info("-----------------------------------------------------")
-        _logger.info("atualiza_node_com_pve")
+        _logger.info("starting update nodes")
+        _logger.info("-----------------------------------------------------")
         providers = self.env['thorpe.base'].search([])
         for provider in providers:
             try:

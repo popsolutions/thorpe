@@ -5,11 +5,12 @@ from . import thorpe_request
 
 _logger = logging.getLogger(__name__)                                                                                        
 
-class ThorpeBaseUpdateNodes(models.Model):
-    _name = 'thorpe.base.update.storage'
+class UpdateStorage(models.Model):
+    _name = 'thorpe.update.storage'
+    _description = 'methodos to update storage models'
 
     @api.model
-    def atualiza_storages_com_node(self):
+    def update_storages(self):
         # Consulta para obter todos os Nodes
         _logger.info("-----------------------------------------------------")
         _logger.info("atualiza_storages_com_node")
@@ -29,10 +30,10 @@ class ThorpeBaseUpdateNodes(models.Model):
                     storage = item.get('storage')
                     used_fraction = item.get('used_fraction')
 
-                    storage_record = self.env['thorpe.base.node.storage'].search([('name', '=', storage)], limit=1)
+                    storage_record = self.env['thorpe.base.storage'].search([('name', '=', storage)], limit=1)
 
                     if not storage_record:
-                        storage_record = self.env['thorpe.base.node.storage'].create({
+                        storage_record = self.env['thorpe.base.storage'].create({
                             'name': storage,
                             'node_id': node.id,
                             'used_fraction': used_fraction

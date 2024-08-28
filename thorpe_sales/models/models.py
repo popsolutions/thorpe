@@ -6,7 +6,6 @@ from dataclasses import dataclass, asdict
 
 _logger = logging.getLogger(__name__)                                                                                        
 
-
 @dataclass
 class LxcConfig:
     hostname: str
@@ -32,13 +31,11 @@ class LxcPayload:
     tags: str
 
 
-class SaleOrder(models.Model):                                                                                               
+class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
-    def action_confirm(self):                                                                                                
-        # Call the original method                                                                                           
+    def action_confirm(self):
         super(SaleOrder, self).action_confirm()                                                                              
-
         for order in self:
             self.create_lxc()
 

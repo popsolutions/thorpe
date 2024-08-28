@@ -13,7 +13,8 @@
         <field name="arch" type="xml">
         <tree>
             <field name="name" />
-            <field name="comments" />
+	    <field name="comments" />
+	    <field name="expiration" />
         </tree>
         </field>
     </record> 
@@ -28,10 +29,10 @@
                     <field name="region" string="Region"/>
                     <field name="latitude" string="Latitude"/>
                     <field name="longitude" string="Longitude"/>
-                    <field name="public_ip" string="Public Api"/>                    
                     <field name="url" string="Url"/>
                     <field name="token" string="Token" />
-                    <field name="secret" string="Secret"/>
+		    <field name="secret" string="Secret"/>
+		    <field name="expiration" string="Expiration"/>
                     <field name="comments" string="Comment"/>
                 </group>
             </sheet>
