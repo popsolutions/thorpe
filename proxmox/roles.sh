@@ -4,7 +4,7 @@ pveum role add Thorpe.instance --privs "Datastore.Audit VM.Allocate VM.Audit VM.
 
 # create Role to list nodes
 #
-pveum role add Thorpe.node --privs "Sys.Audit"
+pveum role add Thorpe.nodes --privs "Sys.Audit"
 
 # create Role to manger storage
 #
@@ -12,4 +12,4 @@ pveum role add Thorpe.storage --privs "Datastore.Allocate Datastore.AllocateSpac
 
 # create Role to list templates lxc and vms
 #
-pveum role add Thorpe.templates --privs "VM.Audit"
+pveum role add Thorpe.template --privs "VM.Audit"
